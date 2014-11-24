@@ -37,10 +37,10 @@ public class Main extends Activity implements OnClickListener {
 			break;
 
 		case R.id.btnList2:
-			Toast.makeText(Main.this, "List2", Toast.LENGTH_SHORT).show();
+			target = List2.class;
 			break;
 		case R.id.btnList3:
-			Toast.makeText(Main.this, "List3", Toast.LENGTH_SHORT).show();
+			target = List3.class;
 			break;
 		}
 
