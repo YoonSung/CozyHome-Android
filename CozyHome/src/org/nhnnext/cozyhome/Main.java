@@ -3,16 +3,13 @@ package org.nhnnext.cozyhome;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.Button;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class Main extends Activity implements OnItemClickListener{
 
@@ -21,9 +18,9 @@ public class Main extends Activity implements OnItemClickListener{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.main);
+	    setContentView(R.layout.activity_main);
 	    
-	    ListView listView = (ListView) findViewById(R.id.list3);
+	    ListView listView = (ListView) findViewById(R.id.main_list);
 	    
 	    ListData dto = null;
 	    for (int i = 0; i < 5 ; i++) {
@@ -31,7 +28,7 @@ public class Main extends Activity implements OnItemClickListener{
 	    	dataList.add(dto);
 		}
 	    
-	    CustomListAdapter adapter = new CustomListAdapter(this, R.layout.list3_row, dataList);
+	    CustomListAdapter adapter = new CustomListAdapter(this, R.layout.main_list_row, dataList);
 	    
 	    listView.setAdapter(adapter);
 	    listView.setOnItemClickListener(this);

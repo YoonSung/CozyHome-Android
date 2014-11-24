@@ -3,38 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal" 
-    android:padding="10dp"
+    android:padding="@dimen/pad_10dp"
     >
 
     <ImageView
-        android:id="@+id/rowImg"
+        android:id="@+id/main_list_row_img"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-       
-        android:src="@drawable/ic_launcher" />
+        android:layout_weight="1"/>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 		android:layout_weight="3"        
-		android:layout_marginLeft="8dp"
+		android:layout_marginLeft="@dimen/pad_8dp"
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/rowText1"
+            android:id="@+id/main_list_row_text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Large Text"
-            android:textColor="#327093"
+            android:textColor="@color/main_list_row_text1"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:id="@+id/rowText2"
+            android:id="@+id/main_list_row_text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Small Text"
-            android:textColor="#8a8a8a"
+            android:textColor="@color/main_list_row_text2"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
     </LinearLayout>

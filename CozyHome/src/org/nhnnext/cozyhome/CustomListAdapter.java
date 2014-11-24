@@ -40,13 +40,13 @@ public class CustomListAdapter extends ArrayAdapter<ListData> {
 			row = inflater.inflate(layoutResourceId, parent, false);
 		}
 		
-		TextView textView1 = (TextView) row.findViewById(R.id.rowText1);
-		TextView textView2 = (TextView) row.findViewById(R.id.rowText2);
+		TextView textView1 = (TextView) row.findViewById(R.id.main_list_row_text1);
+		TextView textView2 = (TextView) row.findViewById(R.id.main_list_row_text2);
 		
 		textView1.setText(listData.get(position).getText1());
 		textView2.setText(listData.get(position).getText2());
 		
-		ImageView imageView = (ImageView) row.findViewById(R.id.rowImg);
+		ImageView imageView = (ImageView) row.findViewById(R.id.main_list_row_img);
 		
 		InputStream is;
 		try {

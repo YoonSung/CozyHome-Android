@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">CozyHome</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="main_btn_write">Write</string>
+    <string name="main_btn_refresh">Refresh</string>
 
 </resources>
