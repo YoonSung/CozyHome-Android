@@ -1,11 +1,11 @@
 package org.nhnnext.cozyhome;
 
-public class List3Data {
+public class ListData {
 	private String text1;
 	private String text2;
 	private String imgName;
 	
-	public List3Data(String text1, String text2, String imgName) {
+	public ListData(String text1, String text2, String imgName) {
 		super();
 		this.text1 = text1;
 		this.text2 = text2;

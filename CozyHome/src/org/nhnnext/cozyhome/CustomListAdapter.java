@@ -15,13 +15,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class List3CustomAdapter extends ArrayAdapter<List3Data> {
+public class CustomListAdapter extends ArrayAdapter<ListData> {
 
 	private Context context;
-	private ArrayList<List3Data> listData;
+	private ArrayList<ListData> listData;
 	private int layoutResourceId;
 
-	public List3CustomAdapter(Context context, int layoutResourceId, ArrayList<List3Data> listData) {
+	public CustomListAdapter(Context context, int layoutResourceId, ArrayList<ListData> listData) {
 		super(context, layoutResourceId, listData);
 		
 		this.context =context;
