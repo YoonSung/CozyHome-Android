@@ -1,4 +1,4 @@
-package org.nhnnext.cozyhome;
+package org.nhnnext.cozyhome.model;
 
 public class ListData {
 	private String text1;

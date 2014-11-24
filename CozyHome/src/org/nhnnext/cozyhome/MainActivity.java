@@ -2,6 +2,9 @@ package org.nhnnext.cozyhome;
 
 import java.util.ArrayList;
 
+import org.nhnnext.cozyhome.model.ListData;
+import org.nhnnext.cozyhome.support.CustomListAdapter;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +14,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class Main extends Activity implements OnItemClickListener{
+public class MainActivity extends Activity implements OnItemClickListener{
 
 	private ArrayList<ListData> dataList = new ArrayList<ListData>(); 
 	
@@ -38,7 +41,7 @@ public class Main extends Activity implements OnItemClickListener{
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		String msg = position+ "번 리스트가 선택됨";
 		Log.i("TEST", msg);
-		Toast.makeText(Main.this, msg, Toast.LENGTH_SHORT).show();
+		Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
 	}
 
 }

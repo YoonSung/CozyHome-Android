@@ -1,8 +1,12 @@
-package org.nhnnext.cozyhome;
+package org.nhnnext.cozyhome.support;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+
+import org.nhnnext.cozyhome.R;
+import org.nhnnext.cozyhome.R.id;
+import org.nhnnext.cozyhome.model.ListData;
 
 import android.app.Activity;
 import android.content.Context;
