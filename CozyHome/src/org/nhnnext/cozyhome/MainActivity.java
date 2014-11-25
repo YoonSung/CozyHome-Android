@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.nhnnext.cozyhome.model.ListData;
 import org.nhnnext.cozyhome.support.CustomListAdapter;
+import org.nhnnext.cozyhome.support.Dao;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -79,6 +80,8 @@ public class MainActivity extends Activity implements OnItemClickListener, OnCli
 
 		case R.id.main_btn_refresh:
 			//TODO DELTE Codeline Text
+			Dao dao = new Dao(getApplicationContext());
+			dao.insert(dao.getJsonTestData());
 			Toast.makeText(MainActivity.this, "Refresh!", Toast.LENGTH_SHORT).show();
 			break;
 		}
