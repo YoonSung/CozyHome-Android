@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.nhnnext.cozyhome.R;
 import org.nhnnext.cozyhome.R.id;
+import org.nhnnext.cozyhome.model.Article;
 import org.nhnnext.cozyhome.model.ListData;
 
 import android.app.Activity;
@@ -19,18 +20,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CustomListAdapter extends ArrayAdapter<ListData> {
+public class CustomListAdapter extends ArrayAdapter<Article> {
 
 	private Context context;
-	private ArrayList<ListData> listData;
+	private ArrayList<Article> articleList;
 	private int layoutResourceId;
 
-	public CustomListAdapter(Context context, int layoutResourceId, ArrayList<ListData> listData) {
-		super(context, layoutResourceId, listData);
+	public CustomListAdapter(Context context, int layoutResourceId, ArrayList<Article> articleList) {
+		super(context, layoutResourceId, articleList);
 		
 		this.context =context;
 		this.layoutResourceId = layoutResourceId;
-		this.listData = listData;
+		this.articleList = articleList;
 	}
 	
 	@Override
@@ -44,17 +45,17 @@ public class CustomListAdapter extends ArrayAdapter<ListData> {
 			row = inflater.inflate(layoutResourceId, parent, false);
 		}
 		
-		TextView textView1 = (TextView) row.findViewById(R.id.main_list_row_text1);
-		TextView textView2 = (TextView) row.findViewById(R.id.main_list_row_text2);
+		TextView txtTitle = (TextView) row.findViewById(R.id.main_list_row_text1);
+		TextView txtContent = (TextView) row.findViewById(R.id.main_list_row_text2);
 		
-		textView1.setText(listData.get(position).getText1());
-		textView2.setText(listData.get(position).getText2());
+		txtTitle.setText(articleList.get(position).getTitle());
+		txtContent.setText(articleList.get(position).getContent());
 		
 		ImageView imageView = (ImageView) row.findViewById(R.id.main_list_row_img);
 		
 		InputStream is;
 		try {
-			is = context.getAssets().open(listData.get(position).getImgName());
+			is = context.getAssets().open(articleList.get(position).getImageName());
 			Drawable d = Drawable.createFromStream(is, null);
 			imageView.setImageDrawable(d);
 			

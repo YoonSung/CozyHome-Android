@@ -1,8 +1,5 @@
 package org.nhnnext.cozyhome;
 
-import java.util.ArrayList;
-
-import org.nhnnext.cozyhome.model.ListData;
 import org.nhnnext.cozyhome.support.CustomListAdapter;
 import org.nhnnext.cozyhome.support.Dao;
 
@@ -21,11 +18,10 @@ import android.widget.Toast;
 public class MainActivity extends Activity implements OnItemClickListener, OnClickListener{
 
 	private static final String TAG = MainActivity.class.getName();
-	private ArrayList<ListData> dataList = new ArrayList<ListData>(); 
 	private Button btnWrite;
 	private Button btnRefresh;
 	private ListView listView;
-	
+	private Dao dao;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -44,19 +40,17 @@ public class MainActivity extends Activity implements OnItemClickListener, OnCli
 	}
 
 	private void setupListView() {
-		ListData dto = null;
-	    for (int i = 0; i < 5 ; i++) {
-	    	//TODO DELTE Codeline Text
-	    	dto = new ListData(i+"-첫번째 줄", i+"-두번째 줄", "0"+i+".jpg");
-	    	dataList.add(dto);
-		}
-	    
-	    CustomListAdapter adapter = new CustomListAdapter(this, R.layout.main_list_row, dataList);
+    
+	    CustomListAdapter adapter = new CustomListAdapter(this, R.layout.main_list_row, dao.getArticleList());
 	    
 	    listView.setAdapter(adapter);
 	}
 
 	private void initialize() {
+		dao = new Dao(getApplicationContext());
+		dao.deleteAll();
+		dao.insert(dao.getJsonTestData());
+		
 		listView = (ListView) findViewById(R.id.main_list);
 	    btnWrite = (Button) findViewById(R.id.main_btn_write);
 	    btnRefresh = (Button) findViewById(R.id.main_btn_refresh);
@@ -80,8 +74,6 @@ public class MainActivity extends Activity implements OnItemClickListener, OnCli
 
 		case R.id.main_btn_refresh:
 			//TODO DELTE Codeline Text
-			Dao dao = new Dao(getApplicationContext());
-			dao.insert(dao.getJsonTestData());
 			Toast.makeText(MainActivity.this, "Refresh!", Toast.LENGTH_SHORT).show();
 			break;
 		}

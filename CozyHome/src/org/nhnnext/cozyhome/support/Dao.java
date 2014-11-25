@@ -1,10 +1,14 @@
 package org.nhnnext.cozyhome.support;
 
+import java.util.ArrayList;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.nhnnext.cozyhome.model.Article;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
@@ -21,10 +25,10 @@ public class Dao {
 		
 		//Create table If not exists
 		try {
-			String sql = "CREATE TABLE IF NOT EXISTS Articles(" 
+			String sql = "CREATE TABLE IF NOT EXISTS tbl_article(" 
 					+ "id INTEGER PRIMARY KEY AUTOINCREMENT,"
-					+ "title TEXT NOT NULL,"
 					+ "article_num INTEGER UNIQUE not null,"
+					+ "title TEXT NOT NULL,"
 					+ "writer TEXT NOT NULL,"
 					+ "writer_id TEXT NOT NULL,"
 					+ "content TEXT NOT NULL,"
@@ -36,6 +40,45 @@ public class Dao {
 			Log.e(TAG, "CREATE TABLE FAILED! - "+e);
 			e.printStackTrace();
 		}
+	}
+	
+	public ArrayList<Article> getArticleList() {
+		
+		ArrayList<Article> articleList = new ArrayList<Article>();
+		int articleNumber;
+		String title;
+		String writer;
+		String writerId;
+		String content;
+		String writeDate;
+		String imageName;
+		
+		String sql = "SELECT * FROM tbl_article;";
+		Cursor cursor = database.rawQuery(sql,  null);
+		
+		Article article = null;
+		while (cursor.moveToNext()) {
+			articleNumber = cursor.getInt(1);
+			title = cursor.getString(2);
+			writer = cursor.getString(3);
+			writerId = cursor.getString(4);
+			content = cursor.getString(5);
+			writeDate = cursor.getString(6);
+			imageName = cursor.getString(7);
+			
+			article = new Article(articleNumber, title, writer, writerId, content, writeDate, imageName);
+			Log.i(TAG, article.toString());
+			articleList.add(article);
+		}
+		
+		cursor.close();
+		
+		return articleList;
+	}
+	
+	public void deleteAll() {
+		String sql = "DELETE FROM tbl_article;";
+		database.execSQL(sql);
 	}
 	
 	public void insert(String jsonData) {
@@ -56,17 +99,6 @@ public class Dao {
 			for (int i = 0; i < jsonArray.length(); ++i) {
 				jsonObject = jsonArray.getJSONObject(i);
 				
-				String sql = "CREATE TABLE IF NOT EXISTS Articles(" 
-						+ "id INTEGER PRIMARY KEY AUTOINCREMENT,"
-						+ "title TEXT NOT NULL,"
-						+ "article_num INTEGER UNIQUE not null,"
-						+ "writer TEXT NOT NULL,"
-						+ "writer_id TEXT NOT NULL,"
-						+ "content TEXT NOT NULL,"
-						+ "write_date TEXT NOT NULL,"
-						+ "img_name TEXT UNIQUE NOT NULL"
-						+ ");";
-				
 				articleNumber = jsonObject.getInt("article_num");
 				title = jsonObject.getString("title");
 				writer = jsonObject.getString("writer");
@@ -75,6 +107,41 @@ public class Dao {
 				writeDate = jsonObject.getString("write_date");
 				imageName = jsonObject.getString("img_name");
 				
+				String sql = "INSERT INTO tbl_article(article_num, title, writer, writer_id, content, write_date, img_name) VALUES"
+						+"("
+						+articleNumber
+						+","
+						
+						+"'"
+						+title
+						+"'"
+						+","
+						
+						+"'"
+						+writer
+						+"'"
+						+","
+						
+						+"'"
+						+writerId
+						+"'"
+						+","
+						
+						+"'"
+						+content
+						+"'"
+						+","
+						
+						+"'"
+						+writeDate
+						+"'"
+						+","
+						
+						+"'"
+						+imageName
+						+"'"
+						+");";
+				database.execSQL(sql);
 				Log.i(TAG, "ArticleNumber : "+articleNumber + "Title : "+title);
 			}
 			
