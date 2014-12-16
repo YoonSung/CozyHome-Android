@@ -21,8 +21,8 @@
         <requestFocus />
     </EditText>
 
-    <Button
-        android:id="@+id/activity_writer_btn_getphoto"
+    <ImageButton
+        android:id="@+id/activity_writer_btn_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button" />

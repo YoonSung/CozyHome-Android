@@ -39,7 +39,7 @@ public final class R {
         public static final int activity_article_txt_content=0x7f070003;
         public static final int activity_article_txt_title=0x7f070002;
         public static final int activity_article_txt_writer=0x7f070000;
-        public static final int activity_writer_btn_getphoto=0x7f070009;
+        public static final int activity_writer_btn_photo=0x7f070009;
         public static final int activity_writer_btn_save=0x7f070007;
         public static final int activity_writer_edt_content=0x7f07000b;
         public static final int activity_writer_edt_title=0x7f07000a;
