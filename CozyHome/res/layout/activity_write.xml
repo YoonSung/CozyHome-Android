@@ -2,12 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/white" >
 
-    <TextView
-        android:id="@+id/write_txt_test"
+    <Button
+        android:id="@+id/activity_writer_btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_write_btn" />
+
+    <EditText
+        android:id="@+id/activity_writer_edt_writer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/activity_writer_edt_writer"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/activity_writer_btn_getphoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="writeActivity" />
-	
+        android:text="Button" />
+
+    <EditText
+        android:id="@+id/activity_writer_edt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/activity_writer_edt_title"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/activity_writer_edt_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/activity_writer_edt_content"
+        android:inputType="textMultiLine" />
+
 </LinearLayout>

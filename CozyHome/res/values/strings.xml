@@ -4,5 +4,10 @@
     <string name="app_name">CozyHome</string>
     <string name="main_btn_write">Write</string>
     <string name="main_btn_refresh">Refresh</string>
-
+    
+    <string name="activity_article_txt_writer">글쓴이</string>
+    <string name="activity_write_btn">Writer</string>
+	<string name="activity_writer_edt_writer">작성자명</string>
+	<string name="activity_writer_edt_title">제목</string>
+	<string name="activity_writer_edt_content">본문 내용</string>
 </resources>

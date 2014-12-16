@@ -2,4 +2,7 @@
 <resources>
     <color name="main_list_row_text1">#327093</color>
     <color name="main_list_row_text2">#8a8a8a</color>
+    <color name="activity_article_txt_writer">#327093</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 </resources>

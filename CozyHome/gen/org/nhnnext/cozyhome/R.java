@@ -11,8 +11,11 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int activity_article_txt_writer=0x7f040002;
+        public static final int black=0x7f040004;
         public static final int main_list_row_text1=0x7f040000;
         public static final int main_list_row_text2=0x7f040001;
+        public static final int white=0x7f040003;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -26,19 +29,27 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
         public static final int pad_10dp=0x7f050003;
         public static final int pad_8dp=0x7f050002;
+        public static final int txt_15sp=0x7f050004;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int article_txt_test=0x7f070000;
-        public static final int main_btn_refresh=0x7f070002;
-        public static final int main_btn_write=0x7f070001;
-        public static final int main_list=0x7f070003;
-        public static final int main_list_row_img=0x7f070005;
-        public static final int main_list_row_text1=0x7f070006;
-        public static final int main_list_row_text2=0x7f070007;
-        public static final int write_txt_test=0x7f070004;
+        public static final int activity_article_img=0x7f070001;
+        public static final int activity_article_txt_content=0x7f070003;
+        public static final int activity_article_txt_title=0x7f070002;
+        public static final int activity_article_txt_writer=0x7f070000;
+        public static final int activity_writer_btn_getphoto=0x7f070009;
+        public static final int activity_writer_btn_save=0x7f070007;
+        public static final int activity_writer_edt_content=0x7f07000b;
+        public static final int activity_writer_edt_title=0x7f07000a;
+        public static final int activity_writer_edt_writer=0x7f070008;
+        public static final int main_btn_refresh=0x7f070005;
+        public static final int main_btn_write=0x7f070004;
+        public static final int main_list=0x7f070006;
+        public static final int main_list_row_img=0x7f07000c;
+        public static final int main_list_row_text1=0x7f07000d;
+        public static final int main_list_row_text2=0x7f07000e;
     }
     public static final class layout {
         public static final int activity_article=0x7f030000;
@@ -48,6 +59,11 @@ public final class R {
         public static final int main_list_row=0x7f030004;
     }
     public static final class string {
+        public static final int activity_article_txt_writer=0x7f060003;
+        public static final int activity_write_btn=0x7f060004;
+        public static final int activity_writer_edt_content=0x7f060007;
+        public static final int activity_writer_edt_title=0x7f060006;
+        public static final int activity_writer_edt_writer=0x7f060005;
         public static final int app_name=0x7f060000;
         public static final int main_btn_refresh=0x7f060002;
         public static final int main_btn_write=0x7f060001;
